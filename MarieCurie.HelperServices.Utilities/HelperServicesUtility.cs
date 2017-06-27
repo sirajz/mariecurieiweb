@@ -7,9 +7,9 @@ using MarieCurie.Interview.Assets.Model;
 
 namespace MarieCurie.HelperServices.Utilities
 {
-    public class HelperServicesUtility : IHelperServicesUtil
+    public static class HelperServicesUtility 
     {
-        public bool checkOpenningHours(string dayOfWeek, int Hour, HelperService center)
+        public static bool checkOpenningHours(string dayOfWeek, int Hour, HelperService center)
         {
             if (dayOfWeek == DayOfWeek.Monday.ToString())
             {
@@ -82,7 +82,7 @@ namespace MarieCurie.HelperServices.Utilities
         }
 
 
-        public string nextOpenningHours(string dayOfWeek, int Hour, HelperService center)
+        public static string nextOpenningHours(string dayOfWeek, int Hour, HelperService center)
         {
             if (dayOfWeek == DayOfWeek.Monday.ToString())
             {

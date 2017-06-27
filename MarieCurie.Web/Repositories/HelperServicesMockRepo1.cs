@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MarieCurie.Web.Repositories
 {
-    public class HelperServicesMockRepo1
+    public class HelperServicesMockRepo1 : IHelperServiceRepository
     {
         public List<HelperService> getCenters()
         {

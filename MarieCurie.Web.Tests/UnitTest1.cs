@@ -28,8 +28,7 @@ namespace MarieCurie.Web.Tests
             string result = "";
 
             //act
-            HelperServicesUtility helpServiceUtil = new HelperServicesUtility();
-            if (helpServiceUtil.checkOpenningHours(DayOfWeek, Hour, center))
+            if (HelperServicesUtility.checkOpenningHours(DayOfWeek, Hour, center))
                 result = $"panel panel-warning col-md-3";
             else
                 result = $"panel panel-default col-md-3";
@@ -50,16 +49,15 @@ namespace MarieCurie.Web.Tests
             List<HelperService> centers = repo.getCenters();
 
             string dayOfWeek = DayOfWeek.Monday.ToString();
-            int Hour = 15; // DateTime.Now.Hour;
+            int Hour = 17; // DateTime.Now.Hour;
             var center = centers[1];
             string result = "";
 
             //act
-            HelperServicesUtility helpServiceUtil = new HelperServicesUtility();
-            result = helpServiceUtil.nextOpenningHours(dayOfWeek, Hour, center);
+            result = HelperServicesUtility.nextOpenningHours(dayOfWeek, Hour, center);
 
             //assert
-            Assert.IsTrue(result == "Open today until 5.00 pm");
+            Assert.IsTrue(result == "Open today until 8.00 pm");
 
             //"panel panel-warning col-md-4";
 
@@ -74,16 +72,15 @@ namespace MarieCurie.Web.Tests
             List<HelperService> centers = repo.getCenters();
 
             string dayOfWeek = DayOfWeek.Tuesday.ToString();
-            int Hour = 19; // DateTime.Now.Hour;
+            int Hour = 21; // DateTime.Now.Hour;
             var center = centers[1];
             string result = "";
 
             //act
-            HelperServicesUtility helpServiceUtil = new HelperServicesUtility();
-            result = helpServiceUtil.nextOpenningHours(dayOfWeek, Hour, center);
+            result = HelperServicesUtility.nextOpenningHours(dayOfWeek, Hour, center);
 
             //assert
-            Assert.IsTrue(result == "Reopens tomorrow 2.00 pm");
+            Assert.IsTrue(result == "Reopens tomorrow 5.00 pm");
 
             //"panel panel-warning col-md-4";
 

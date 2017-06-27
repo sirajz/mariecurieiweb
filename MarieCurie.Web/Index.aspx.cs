@@ -30,8 +30,7 @@ namespace MarieCurie.Web
             string DayOfWeek = DateTime.Now.DayOfWeek.ToString();
             int Hour = DateTime.Now.Hour;
 
-            HelperServicesUtility helpServiceUtil = new HelperServicesUtility();
-            if (helpServiceUtil.checkOpenningHours(DayOfWeek, Hour, center))
+            if (HelperServicesUtility.checkOpenningHours(DayOfWeek, Hour, center))
                 return $"panel panel-warning col-md-3";
             else
                 return $"panel panel-default col-md-3";
@@ -41,8 +40,7 @@ namespace MarieCurie.Web
             string DayOfWeek = DateTime.Now.DayOfWeek.ToString();
             int Hour = DateTime.Now.Hour;
 
-            HelperServicesUtility helpServiceUtil = new HelperServicesUtility();
-            return helpServiceUtil.nextOpenningHours(DayOfWeek, Hour, center);
+            return HelperServicesUtility.nextOpenningHours(DayOfWeek, Hour, center);
 
 
 
